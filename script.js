@@ -1,4 +1,4 @@
-//from page one to page two
+// from page one to page two
 // const nuGpaBtn = document.getElementById("nu-gpa-btn");
 
 // nuGpaBtn.addEventListener("click", () => {
@@ -124,14 +124,8 @@ infoForm.addEventListener("submit", (e) => {
     select.name = "grade";
     select.id = "grade";
     select.className = "select";
-    select.setAttribute("onchange", "calculateGrade(this)");
-    // const option = document.createElement("option");
-    // option.selected = true;
-    // option.disabled = true;
-    // option.value = "";
-    // option.textContent = "Select";
+
     populateOptions(select, grades, "Select");
-    // select.appendChild(option);
 
     tdGrade.appendChild(select);
 
@@ -139,37 +133,6 @@ infoForm.addEventListener("submit", (e) => {
     tr.append(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
   });
 });
-
-let sumOfGrades = 0;
-function calculateGrade(e) {
-  let valueStr = e.value;
-
-  // find the index of first space
-  let firstSpaceIndex = valueStr.indexOf(" ");
-  // delete the first word
-  let value = Number(valueStr.slice(firstSpaceIndex + 1));
-  sumOfGrades += value;
-  console.log(sumOfGrades);
-}
-
-// get grades
-// const tableForm = document.getElementById("table-form");
-// console.log(tableForm);
-// let sum = [];
-
-// tableForm.addEventListener("change", function () {
-//   const formDatas = new FormData(this);
-//   console.log(formDatas);
-//   formDatas.forEach((formData) => {
-//     // find the index of first space
-//     let firstSpaceIndex = formData.indexOf(" ");
-//     // delete first word
-//     let data = formData.slice(firstSpaceIndex + 1);
-//     let numData = Number(data);
-//     sum.push(numData);
-//     console.log(sum);
-//   });
-// });
 
 // ================================
 // ========course subject========
