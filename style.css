@@ -1,0 +1,167 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 360px) {
+  header {
+    background-color: #008f7a;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header h1 {
+    color: white;
+  }
+
+  /* main  */
+  /* main home  */
+  .home-main {
+    margin-top: 30%;
+    display: grid;
+    grid-template-columns: repeat(2, 160px);
+    grid-template-rows: repeat(2, 115px);
+    justify-content: center;
+    gap: 20px;
+    display: none;
+  }
+  .action-buttons {
+    /* width: 150px; */
+    /* height: 90px; */
+    background-color: #008f7a;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  /* main home  */
+  /* nu-calculate-home  */
+  .nu-calculate-home {
+    width: 100%;
+    padding: 20px;
+    /* display: none; */
+  }
+  .nu-calculate-home h2 {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15%;
+    color: #4b4453;
+  }
+  .field {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .field label {
+    flex-basis: 40%;
+    align-self: center;
+    color: #4b4453;
+  }
+  .field select {
+    flex-basis: 60%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #008f7a;
+    color: #4b4453;
+  }
+  .submit {
+    width: 100%;
+    color: white;
+    border: none;
+    height: 50px;
+    font-size: 1.2rem;
+    margin-top: 10%;
+    background-color: #008f7a;
+    cursor: pointer;
+  }
+  /* nu-calculate-home  */
+  /* nu-display-gpa */
+  .nu-display-gpa {
+    width: 100%;
+    margin-top: 5%;
+    display: none;
+  }
+  .nu-display-gpa .input-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .nu-display-gpa .input-table,
+  .nu-display-gpa .input-table tr,
+  .nu-display-gpa .input-table th,
+  .nu-display-gpa .input-table td {
+    border: 1px solid #008f7a;
+    font-size: 12px;
+    color: #4b4453;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+    text-align: center;
+    padding: 0px 5px;
+  }
+  /* table tr th:nth-child(1),
+  table tr td:nth-child(1) {
+    max-width: 16px;
+  } */
+  .input-table tr th:nth-child(2),
+  .input-table tr td:nth-child(2) {
+    max-width: 180px;
+    text-align: left;
+  }
+  /* table tr th:nth-child(3),
+  table tr td:nth-child(3) {
+    max-width: 35px;
+  } */
+
+  .nu-display-gpa .input-table select {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #008f7a;
+    outline: none;
+  }
+  .total-row {
+    font-weight: bold;
+  }
+  .nu-display-gpa .input-table .total-row td:nth-child(2) {
+    text-align: center;
+  }
+  /* .result {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .result span {
+    font-style: italic;
+    color: red;
+  } */
+  .result {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .result-table {
+    width: 40%;
+    margin: 0px auto;
+    border-collapse: collapse;
+  }
+  .result-table,
+  .result-table tr,
+  .result-table td {
+    border: 1px solid #008f7a;
+    padding: 5px;
+  }
+  .result-table tr:nth-child(3) {
+    color: red;
+  }
+  #another-year {
+    height: 50px;
+    display: block;
+    margin: 30px auto;
+    width: 200px;
+    font-size: 1rem;
+    border: 1px solid #008f7a;
+    outline: none;
+    padding-left: 10px;
+  }
+  /* nu-display-gpa */
+  /* main  */
+}

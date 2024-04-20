@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>CGPA Calculator</h1>
+      </header>
+      <main>
+        <!-- main home  -->
+        <section class="home-main">
+          <button class="action-buttons" id="nu-gpa-btn">
+            NU GPA Calculate
+          </button>
+          <button class="action-buttons">Custom GPA Calculate</button>
+          <button class="action-buttons">CGPA Calculate</button>
+          <button class="action-buttons">Recommendation</button>
+        </section>
+        <!-- main home  -->
+        <!-- main nu gpa calculator home  -->
+        <!-- it will be displayed when the user clicks NU GPA Calculate Button  -->
+        <section class="nu-calculate-home">
+          <h2>Calculate National University GPA</h2>
+          <form id="info-form">
+            <div class="field">
+              <label for="course_name">Course Name</label>
+              <select
+                name="course_name"
+                id="course_name"
+                value
+                required
+              ></select>
+            </div>
+            <div class="field">
+              <label for="course_year">Year</label>
+              <select name="course_year" id="course_year" required>
+                <option disabled selected value="">Select Year</option>
+                <option value="0">First Year</option>
+                <option value="1">Second Year</option>
+                <option value="2">Third Year</option>
+                <option value="3">Fourth Year</option>
+              </select>
+            </div>
+            <input class="submit" type="submit" value="Next" />
+          </form>
+        </section>
+        <!-- main nu gpa calculator home  -->
+        <!-- display cgpn -->
+        <section class="nu-display-gpa">
+          <form id="table-form">
+            <table class="input-table">
+              <tr>
+                <th></th>
+                <th>Subjects</th>
+                <th>Credit</th>
+                <th>Grade</th>
+              </tr>
+              <tbody id="table_form"></tbody>
+              <!-- <form id="table_form"> -->
+              <!-- remove -->
+              <!-- <tr>
+                <td>01</td>
+                <td>Computer Information Technology (Accounting)</td>
+                <td>4.00</td>
+                <td>
+                  <select name="grade" id="grade">
+                    <option selected disabled>Select</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>01</td>
+                <td>Computer Information Technology (Accounting)</td>
+                <td>4.00</td>
+                <td>
+                  <select name="grade" id="grade">
+                    <option selected disabled>Select</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>01</td>
+                <td>Computer Information Technology (Accounting)</td>
+                <td>4.00</td>
+                <td>
+                  <select name="grade" id="grade">
+                    <option selected disabled>Select</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>01</td>
+                <td>Computer Information Technology (Accounting)</td>
+                <td>4.00</td>
+                <td>
+                  <select name="grade" id="grade">
+                    <option selected disabled>Select</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>01</td>
+                <td>Computer Information Technology (Accounting)</td>
+                <td>4.00</td>
+                <td>
+                  <select name="grade" id="grade">
+                    <option selected disabled>Select</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>01</td>
+                <td>Computer Information Technology (Accounting)</td>
+                <td>4.00</td>
+                <td>
+                  <select name="grade" id="grade">
+                    <option selected disabled>Select</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                    <option value="a">A+ 4.00</option>
+                  </select>
+                </td>
+              </tr>
+              <tr class="total-row">
+                <td colspan="2">Total</td>
+                <td>30</td>
+                <td>40</td>
+              </tr> -->
+              <!-- remove -->
+              <!-- </form> -->
+            </table>
+          </form>
+          <div class="result">
+            <!-- <p>GPA of 1st year: <span>3.00</span></p>
+            <p>CGPA of 1st year: <span>Select Another Year</span></p> -->
+            <table class="result-table">
+              <tr>
+                <td>Total Credit</td>
+                <td>40.00</td>
+              </tr>
+              <tr>
+                <td>Total Grade</td>
+                <td>60.00</td>
+              </tr>
+              <tr>
+                <td>GPA</td>
+                <td>4.00</td>
+              </tr>
+              <tr>
+                <td>CGPA</td>
+                <td>4.00</td>
+              </tr>
+            </table>
+          </div>
+          <select name="another-year" id="another-year">
+            <option disabled selected>Calculate Another Year</option>
+            <option value="second-year">Second Year</option>
+            <option value="third-year">Third Year</option>
+            <option value="fourth-year">Fourth Year</option>
+          </select>
+        </section>
+        <!-- display cgpn -->
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

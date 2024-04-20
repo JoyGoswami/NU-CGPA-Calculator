@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of Select Values</title>
+  </head>
+  <body>
+    <select id="select1" class="select" onchange="calculateSum()">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="40">40</option>
+    </select>
+
+    <select id="select2" class="select" onchange="calculateSum()">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </select>
+
+    <p id="result">Sum:</p>
+
+    <script>
+      function calculateSum() {
+        var selects = document.getElementsByClassName("select");
+        var resultElement = document.getElementById("result");
+        var sum = 0;
+
+        // Loop through each select element and calculate the sum of selected values
+        for (var i = 0; i < selects.length; i++) {
+          sum += parseInt(selects[i].value);
+        }
+
+        resultElement.textContent = "Sum: " + sum;
+      }
+
+      // Add event listeners to each select element
+      var selects = document.getElementsByClassName("select");
+      for (var i = 0; i < selects.length; i++) {
+        selects[i].addEventListener("change", calculateSum);
+      }
+    </script>
+  </body>
+</html>

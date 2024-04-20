@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <select name="a" id="a">
+        <option value="a">a</option>
+        <option value="c">c</option>
+      </select>
+      <select name="b" id="b">
+        <option value="">b</option>
+        <option value="e">e</option>
+      </select>
+    </form>
+    <script>
+      const form = document.getElementById("form");
+
+      form.addEventListener("change", (e) => {
+        const formobj = new FormData(form);
+        formobj.forEach((e) => {
+          console.log(e);
+        });
+      });
+    </script>
+  </body>
+</html>
