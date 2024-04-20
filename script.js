@@ -95,7 +95,7 @@ infoForm.addEventListener("submit", (e) => {
   document.querySelector(".nu-display-gpa").style.display = "block";
 
   //form el to append child
-  const formEl = document.getElementById("table_form");
+  const tableBody = document.getElementById("table_body");
   //display data
   //create elements
   const tr = document.createElement("tr");
@@ -109,7 +109,7 @@ infoForm.addEventListener("submit", (e) => {
   console.log(courseData[courseName][courseYear].subjects);
   courseData[courseName][courseYear].subjects.forEach((subject, index) => {
     const tr = document.createElement("tr");
-    formEl.appendChild(tr);
+    tableBody.appendChild(tr);
     const tdSerialNo = document.createElement("td");
     tdSerialNo.textContent = index + 1;
     const tdSubjectName = document.createElement("td");
@@ -132,6 +132,15 @@ infoForm.addEventListener("submit", (e) => {
     //append 4 tds to tr
     tr.append(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
   });
+});
+
+const tableForm = document.getElementById("table-form");
+console.log(tableForm);
+tableForm.addEventListener("change", function () {
+  const formData = new FormData(this);
+  const grade = 0;
+
+  console.log();
 });
 
 // ================================
