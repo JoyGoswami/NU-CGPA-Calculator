@@ -79,6 +79,9 @@
   }
   /* nu-calculate-home  */
   /* nu-display-gpa */
+  .year {
+    margin-bottom: 5px;
+  }
   .nu-display-gpa {
     width: 100%;
     margin-top: 5%;
@@ -158,6 +161,12 @@
     border: none;
     color: black;
   } */
+  .calculate-gpa-btn {
+    border: 1px solid #008f7a;
+    display: block;
+    margin: 10px auto;
+    padding: 5px 10px;
+  }
   #another-year {
     height: 50px;
     display: block;

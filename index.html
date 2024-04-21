@@ -52,6 +52,7 @@
         <!-- main nu gpa calculator home  -->
         <!-- display cgpn -->
         <section class="nu-display-gpa">
+          <p class="year"></p>
           <form id="table-form">
             <table class="input-table">
               <tr>
@@ -61,6 +62,7 @@
                 <th>Grade</th>
               </tr>
               <tbody id="table_body"></tbody>
+
               <!-- <form id="table_form"> -->
               <!-- remove -->
               <!-- <tr>
@@ -155,6 +157,13 @@
               <!-- remove -->
               <!-- </form> -->
             </table>
+            <input
+              type="submit"
+              value="Calculate GPA"
+              name="calculate-gpa-btn"
+              class="calculate-gpa-btn"
+              id="calculate-gpa-btn"
+            />
           </form>
           <div class="result">
             <!-- <p>GPA of 1st year: <span>3.00</span></p>
@@ -164,20 +173,7 @@
                 <td>Total Credit</td>
                 <td class="total-credit">--</td>
               </tr>
-              <tr>
-                <td>Total Grade</td>
-                <td class="total-grade">
-                  --
-                  <!-- <input
-                    disabled
-                    type="text"
-                    name="total-grade"
-                    id="total-grade"
-                    class="total-grade"
-                    value="--"
-                  /> -->
-                </td>
-              </tr>
+
               <tr>
                 <td>GPA</td>
                 <td class="gpa">--</td>
@@ -198,6 +194,6 @@
         <!-- display cgpn -->
       </main>
     </div>
-    <script src="./script.js"></script>
+    <script src="./script2.js"></script>
   </body>
 </html>
