@@ -152,6 +152,12 @@
   .result-table tr:nth-child(3) {
     color: red;
   }
+  /* .total-grade {
+    width: 40px;
+    height: 100%;
+    border: none;
+    color: black;
+  } */
   #another-year {
     height: 50px;
     display: block;

@@ -65,6 +65,7 @@ const grades = [
 const subjectOptions = ["Select Course", "English", "Bangla"];
 
 const courseNameSeleceElement = document.getElementById("course_name");
+let totalCredit = 0;
 
 // subjectOptions.forEach((subjectOption) => {
 //   const optionElement = document.createElement("option");
@@ -115,6 +116,7 @@ infoForm.addEventListener("submit", (e) => {
     const tdSubjectName = document.createElement("td");
     tdSubjectName.textContent = subject;
     const tdCredit = document.createElement("td");
+    tdCredit.className = "credit";
 
     tdCredit.textContent = courseData[courseName][courseYear][subject];
 
@@ -132,16 +134,65 @@ infoForm.addEventListener("submit", (e) => {
     //append 4 tds to tr
     tr.append(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
   });
+  //result elements
+  const totalGradeEl = document.querySelector(".total-grade");
+
+  // getting the value from select elements
+  const selectElements = document.querySelectorAll(".select");
+
+  for (let i = 0; i < selectElements.length; i++) {
+    selectElements[i].addEventListener("change", function () {
+      let gradeSum = 0;
+      for (let i = 0; i < selectElements.length; i++) {
+        let gradeStr = selectElements[i].value;
+        let indexOfFirstSpace = gradeStr.indexOf(" ");
+
+        let allGradeStr = gradeStr.slice(indexOfFirstSpace + 1);
+        if (allGradeStr === "Select") {
+          allGradeStr = "0";
+        }
+        let gradeNum = Number(allGradeStr);
+
+        gradeSum += gradeNum;
+      }
+      totalGradeEl.textContent = gradeSum;
+      displayGpa(gradeSum);
+      // displayTotalGradeSum(gradeSum);
+      // displayResult(totalGradeEl, gradeSum);
+    });
+  }
+  // display total credit
+  // let totalCredit = 0;
+  const totalCreditEl = document.querySelector(".total-credit");
+  const creditEl = document.querySelectorAll(".credit");
+  creditEl.forEach((credit) => {
+    totalCredit += Number(credit.textContent);
+    totalCreditEl.textContent = totalCredit;
+    // displayResult(totalCreditEl, totalCredit);
+  });
 });
 
-const tableForm = document.getElementById("table-form");
-console.log(tableForm);
-tableForm.addEventListener("change", function () {
-  const formData = new FormData(this);
-  const grade = 0;
+// function displayTotalGradeSum(grade) {
+//   const totalGradeEl = document.querySelector(".total-grade");
 
-  console.log();
-});
+//   totalGradeEl.textContent = grade;
+//   console.log(grade);
+// }
+function displayGpa(value) {
+  const gpa = document.querySelector(".gpa");
+  gpa.textContent = value;
+}
+
+// let grade = {};
+// const tableForm = document.getElementById("table-form");
+// console.log(tableForm);
+// tableForm.addEventListener("change", function () {
+//   const formData = new FormData(this);
+//   console.log(formData);
+
+//   formData.forEach((val, key) => {});
+//   console.log(grade);
+// });
 
 // ================================
 // ========course subject========
