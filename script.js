@@ -236,4 +236,32 @@ function createElements(parentEl, subject, index, currentYear) {
   // }
   creditArr.push(creditNum);
   //display credits in credit tdele
+  tdCredit.textContent = courseData[courseName][courseYear][subject];
+
+  //create td and and append select
+  const tdGrade = document.createElement("td");
+  const select = document.createElement("select");
+  select.className = currentYear;
+
+  populateOptions(select, grades, "Select");
+
+  tdGrade.appendChild(select);
+
+  //append 4 tds to tr
+  tr.append(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
+}
+
+function getGrade(selectElements, gradeArr, creditArr, totalCreditEl, gpaEl) {
+  selectElements.forEach((select) => {
+    // store the grade values in gradeStr as string
+    let gradeStr = select.value;
+    // find the index of the first space to delete the first letter
+    let firstSpaceIndex = gradeStr.indexOf(" ");
+    let grades = gradeStr.slice(firstSpaceIndex + 1);
+    if (grades === "Select") {
+      grades = "0";
+    }
+    gradeArr.push(Number(grades));
+  });
+  displayResult(creditArr, gradeArr, totalCreditEl, gpaEl);
 }
