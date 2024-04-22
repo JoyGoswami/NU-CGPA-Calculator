@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+}
+
 @media screen and (max-width: 360px) {
   header {
     background-color: #008f7a;
@@ -17,6 +21,7 @@
   }
 
   /* main  */
+
   /* main home  */
   .home-main {
     margin-top: 30%;
@@ -79,13 +84,19 @@
   }
   /* nu-calculate-home  */
   /* nu-display-gpa */
+  .nu-display-gpa-1,
+  .nu-display-gpa-2,
+  .nu-display-gpa-3,
+  .nu-display-gpa-4 {
+    display: none;
+  }
   .year {
     margin-bottom: 5px;
   }
   .nu-display-gpa {
     width: 100%;
     margin-top: 5%;
-    display: none;
+    /* display: none; */
   }
   .nu-display-gpa .input-table {
     width: 100%;
@@ -137,9 +148,16 @@
     font-style: italic;
     color: red;
   } */
+  .result-1,
+  .result-2,
+  .result-3,
+  .result-4 {
+    display: none;
+  }
   .result {
     margin-top: 30px;
     width: 100%;
+    /* display: none; */
   }
   .result-table {
     width: 40%;
@@ -169,13 +187,16 @@
   }
   #another-year {
     height: 50px;
-    display: block;
+    display: none;
     margin: 30px auto;
     width: 200px;
     font-size: 1rem;
     border: 1px solid #008f7a;
     outline: none;
     padding-left: 10px;
+    position: absolute;
+    top: 185%;
+    left: 22%;
   }
   /* nu-display-gpa */
   /* main  */
