@@ -216,3 +216,24 @@ function populateOptions(parentEl, options, text) {
 // ================================
 // ========functions========
 // ================================
+//credit = Number(courseData[courseName][courseYear][subject])
+//currentYear = courseData[courseName][courseYear].year
+function createElements(parentEl, subject, index, currentYear) {
+  const tr = document.createElement("tr");
+  parentEl.appendChild(tr);
+  const tdSerialNo = document.createElement("td");
+  tdSerialNo.textContent = index + 1;
+  const tdSubjectName = document.createElement("td");
+  tdSubjectName.textContent = subject;
+  const tdCredit = document.createElement("td");
+
+  // storing credits to an array depending on year
+  let creditNum = Number(courseData[courseName][courseYear][subject]);
+  // if (currentYear === "First Year") {
+  //   creditArr1st.push(creditNum);
+  // } else if (currentYear === "Second Year") {
+  //   creditArr2nd.push(creditNum);
+  // }
+  creditArr.push(creditNum);
+  //display credits in credit tdele
+}

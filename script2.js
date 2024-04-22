@@ -85,14 +85,14 @@ infoForm.addEventListener("submit", (e) => {
   const tableBody = document.getElementById("table_body-1");
 
   //create elements a tr and 4 tds
-  const tr = document.createElement("tr");
-  const tdSerialNo = document.createElement("td");
-  const tdSubjectName = document.createElement("td");
-  const tdCredit = document.createElement("td");
-  const tdGrade = document.createElement("td");
+  // const tr = document.createElement("tr");
+  // const tdSerialNo = document.createElement("td");
+  // const tdSubjectName = document.createElement("td");
+  // const tdCredit = document.createElement("td");
+  // const tdGrade = document.createElement("td");
 
   //append 4 tds to tr
-  tr.appendChild(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
+  // tr.appendChild(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
 
   // getting the data from courseData and displaying it
   courseData[courseName][courseYear].subjects.forEach((subject, index) => {
@@ -191,14 +191,14 @@ selectAnotherEl.addEventListener("change", function () {
   const tableBody = document.getElementById("table_body-2");
 
   //create elements a tr and 4 tds
-  const tr = document.createElement("tr");
-  const tdSerialNo = document.createElement("td");
-  const tdSubjectName = document.createElement("td");
-  const tdCredit = document.createElement("td");
-  const tdGrade = document.createElement("td");
+  // const tr = document.createElement("tr");
+  // const tdSerialNo = document.createElement("td");
+  // const tdSubjectName = document.createElement("td");
+  // const tdCredit = document.createElement("td");
+  // const tdGrade = document.createElement("td");
 
-  //append 4 tds to tr
-  tr.appendChild(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
+  // //append 4 tds to tr
+  // tr.appendChild(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
 
   // getting the data from courseData and displaying it
   courseData[courseName][courseYear].subjects.forEach((subject, index) => {
