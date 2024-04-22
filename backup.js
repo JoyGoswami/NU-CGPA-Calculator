@@ -35,53 +35,6 @@ const courseData = {
       "Political Organisation and The Political System of UK and USA": "4",
       "Viva-Voce": "2",
     },
-    {
-      year: "Third Year",
-      subjects: [
-        "Elizabethan and Jacobean Drama",
-        "16th & 17th Century Poetry",
-        "17th and 18th Century Non-Fictional Prose",
-        "Restoration and Eighteenth Century Fiction",
-        "Restoration and Eighteenth Century Poetry and Drama",
-        "Victorian Poetry",
-        "Introduction to Literary Criticism (Up to Romantic Period)",
-        "Introduction to Linguistics",
-      ],
-      "Elizabethan and Jacobean Drama": "4",
-      "16th & 17th Century Poetry": "4",
-      "17th and 18th Century Non-Fictional Prose": "4",
-      "Restoration and Eighteenth Century Fiction": "4",
-      "Restoration and Eighteenth Century Poetry and Drama": "4",
-      "Victorian Poetry": "4",
-      "Introduction to Literary Criticism (Up to Romantic Period)": "4",
-      "Introduction to Linguistics": "4",
-    },
-    {
-      year: "Fourth Year",
-      subjects: [
-        "Nineteenth Century Novel",
-        "Twentieth Century Poetry",
-        "Modern Drama",
-        "Twentieth Century Novel",
-        "American Poetry",
-        "American Literature: Fiction and Drama",
-        "Classics in Translation",
-        "Literary Criticism (From Victorian to Modern Age)",
-        "Continental Literature Or Approaches and Methods of Language Teaching",
-        "Viva-voce",
-      ],
-      "Nineteenth Century Novel": "4",
-      "Twentieth Century Poetry": "4",
-      "Modern Drama": "4",
-      "Twentieth Century Novel": "4",
-      "American Poetry": "4",
-      "American Literature: Fiction and Drama": "4",
-      "Classics in Translation": "4",
-      "Literary Criticism (From Victorian to Modern Age)": "4",
-      "Continental Literature Or Approaches and Methods of Language Teaching":
-        "4",
-      "Viva-voce": "4",
-    },
   ],
 };
 
@@ -105,14 +58,9 @@ let gradeArr2 = [];
 //
 let creditArr1st = [];
 let creditArr2nd = [];
-let creditArr3rd = [];
-let creditArr4th = [];
 let gradeArr1st = [];
 let gradeArr2nd = [];
-let gradeArr3rd = [];
-let gradeArr4th = [];
 
-let gpaArr = [];
 //
 let gradeObj = {};
 
@@ -166,6 +114,35 @@ infoForm.addEventListener("submit", (e) => {
       index,
       currentYear
     );
+    // const tr = document.createElement("tr");
+    // tableBody.appendChild(tr);
+    // const tdSerialNo = document.createElement("td");
+    // tdSerialNo.textContent = index + 1;
+    // const tdSubjectName = document.createElement("td");
+    // tdSubjectName.textContent = subject;
+    // const tdCredit = document.createElement("td");
+    // tdCredit.className = "credit";
+
+    // // Storing credits into an array
+    // // let creditArr = [];
+    // let creditNum = Number(courseData[courseName][courseYear][subject]);
+    // creditArr.push(creditNum);
+    // //
+    // tdCredit.textContent = courseData[courseName][courseYear][subject];
+
+    // const tdGrade = document.createElement("td");
+
+    // const select = document.createElement("select");
+    // select.name = "grade";
+    // select.id = "grade";
+    // select.className = "select";
+
+    // populateOptions(select, grades, "Select");
+
+    // tdGrade.appendChild(select);
+
+    // //append 4 tds to tr
+    // tr.append(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
   });
   // remove nu-calculate-home
   document.querySelector(".nu-calculate-home").style.display = "none";
@@ -192,6 +169,34 @@ tableForm.addEventListener("submit", function (e) {
   e.preventDefault();
   document.querySelector(".result-1").style.display = "block";
 
+  // const selectElements = document.querySelectorAll(".select");
+
+  // gradeArr1st = []
+  // gradeArr2nd = []
+
+  // let year = selectElements[0].classList[0]
+  // // gradeArr = [];
+  // selectElements.forEach((select) => {
+  //   // store the grade values in gradeStr as string
+  //   let gradeStr = select.value;
+  //   // find the index of the first space to delete the first letter
+  //   let firstSpaceIndex = gradeStr.indexOf(" ");
+  //   let grades = gradeStr.slice(firstSpaceIndex + 1);
+  //   if (grades === "Select") {
+  //     grades = "0";
+  //   }
+  //   gradeArr.push(Number(grades));
+  // });
+  // //   console.log(creditArr);
+  // //   console.log(gradeArr);
+  // // const totalCreditEl1 = document.querySelector(".total-credit-1");
+  // // const gpaEl = document.querySelector(".gpa-1");
+  // displayResult(creditArr, gradeArr, totalCreditEl1, gpaEl);
+  //getting the year name
+  // const input = document.querySelectorAll(".getYear");
+  // let year = input[0].classList[0];
+  // console.log(year);
+
   const get_year_name = document.getElementById("table-form-1");
   const get_year_attr = get_year_name.getAttribute("name");
   let split = get_year_attr.split(" ");
@@ -203,8 +208,6 @@ tableForm.addEventListener("submit", function (e) {
   // gradeArr2 = [];
   gradeArr1st = [];
   gradeArr2nd = [];
-  gradeArr3rd = [];
-  gradeArr4th = [];
   const totalCreditEl = document.querySelector(".total-credit-1");
   const gpaEl = document.querySelector(".gpa-1");
 
@@ -212,10 +215,6 @@ tableForm.addEventListener("submit", function (e) {
     getGrade(selectElements, gradeArr1st, creditArr1st, totalCreditEl, gpaEl);
   } else if (year === "Second") {
     getGrade(selectElements, gradeArr2nd, creditArr2nd, totalCreditEl, gpaEl);
-  } else if (year === "Third") {
-    getGrade(selectElements, gradeArr3rd, creditArr3rd, totalCreditEl, gpaEl);
-  } else if (year === "Fourth") {
-    getGrade(selectElements, gradeArr4th, creditArr4th, totalCreditEl, gpaEl);
   }
 });
 // ================================
@@ -241,6 +240,16 @@ selectAnotherEl.addEventListener("change", function () {
   // selecting form body where child elements will be appened
   const tableBody = document.getElementById("table_body-2");
 
+  //create elements a tr and 4 tds
+  // const tr = document.createElement("tr");
+  // const tdSerialNo = document.createElement("td");
+  // const tdSubjectName = document.createElement("td");
+  // const tdCredit = document.createElement("td");
+  // const tdGrade = document.createElement("td");
+
+  // //append 4 tds to tr
+  // tr.appendChild(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
+
   // getting the data from courseData and displaying it
   courseData[courseName][courseYear].subjects.forEach((subject, index) => {
     createElements(
@@ -251,6 +260,35 @@ selectAnotherEl.addEventListener("change", function () {
       index,
       currentYear
     );
+    // const tr = document.createElement("tr");
+    // tableBody.appendChild(tr);
+    // const tdSerialNo = document.createElement("td");
+    // tdSerialNo.textContent = index + 1;
+    // const tdSubjectName = document.createElement("td");
+    // tdSubjectName.textContent = subject;
+    // const tdCredit = document.createElement("td");
+    // tdCredit.className = "credit";
+
+    // // Storing credits into an array
+    // // let creditArr = [];
+    // let creditNum = Number(courseData[courseName][courseYear][subject]);
+    // creditArr2.push(creditNum);
+    // //
+    // tdCredit.textContent = courseData[courseName][courseYear][subject];
+
+    // const tdGrade = document.createElement("td");
+
+    // const select = document.createElement("select");
+    // select.name = "grade";
+    // select.id = "grade";
+    // select.className = "select2";
+
+    // populateOptions(select, grades, "Select");
+
+    // tdGrade.appendChild(select);
+
+    // //append 4 tds to tr
+    // tr.append(tdSerialNo, tdSubjectName, tdCredit, tdGrade);
   });
 });
 // ================================
@@ -274,30 +312,37 @@ tableForm2.addEventListener("submit", function (e) {
   console.log(year);
 
   const selectElements = document.querySelectorAll(`.${year}`);
-
+  console.log(selectElements);
   // gradeArr2 = [];
-  if (year === "First") {
-    gradeArr1st = [];
-  } else if (year === "Second") {
-    gradeArr2nd = [];
-  } else if (year === "Third") {
-    gradeArr3rd = [];
-  } else if (year === "Fourth") {
-    gradeArr4th = [];
-  }
-  // gradeArr1st = [];
-  // gradeArr2nd = [];
+  gradeArr1st = [];
+  gradeArr2nd = [];
   const totalCreditEl = document.querySelector(".total-credit-2");
   const gpaEl = document.querySelector(".gpa-2");
+  // selectElements.forEach((select) => {
+  //   // store the grade values in gradeStr as string
+  //   let gradeStr = select.value;
+  //   // find the index of the first space to delete the first letter
+  //   let firstSpaceIndex = gradeStr.indexOf(" ");
+  //   let grades = gradeStr.slice(firstSpaceIndex + 1);
+  //   if (grades === "Select") {
+  //     grades = "0";
+  //   }
+  //   gradeArr2.push(Number(grades));
+  //   gradeArr2nd.push(Number(grades));
+  //   // console.log(document.querySelectorAll("year"));
+  // });
+  // console.log(gradeArr2nd);
+  // console.log(gradeArr2);
+
+  // const totalCreditEl2 = document.querySelector(".total-credit-2");
+  // const gpaEl2 = document.querySelector(".gpa-2");
+  // displayResult(creditArr2nd, gradeArr2nd, totalCreditEl2, gpaEl2);
+  // getGrade(selectElements, gradeArr2nd, creditArr2nd, totalCreditEl, gpaEl);
 
   if (year === "First") {
     getGrade(selectElements, gradeArr1st, creditArr1st, totalCreditEl, gpaEl);
   } else if (year === "Second") {
     getGrade(selectElements, gradeArr2nd, creditArr2nd, totalCreditEl, gpaEl);
-  } else if (year === "Third") {
-    getGrade(selectElements, gradeArr3rd, creditArr3rd, totalCreditEl, gpaEl);
-  } else if (year === "Fourth") {
-    getGrade(selectElements, gradeArr4th, creditArr4th, totalCreditEl, gpaEl);
   }
 });
 // ================================
@@ -326,7 +371,6 @@ function displayResult(creditArr, gradeArr, totalCreditEl, gpaEl) {
   );
   // gpa = Total SGPA / Total Credit
   let gpa = totalSgpa / totalCredit;
-  // gpaArr.push(gpa);
 
   //display values
   totalCreditEl.textContent = totalCredit;
@@ -364,6 +408,10 @@ function createElements(
   const tdSubjectName = document.createElement("td");
   tdSubjectName.textContent = subject;
   const tdCredit = document.createElement("td");
+  // const input = document.createElement("input");
+  // input.id = "getYear";
+  // input.className = `${currentYear} getYear`;
+  // input.hidden = true;
 
   // storing credits to an array depending on year
   let creditNum = Number(courseData[courseName][courseYear][subject]);
@@ -371,10 +419,6 @@ function createElements(
     creditArr1st.push(creditNum);
   } else if (currentYear === "Second Year") {
     creditArr2nd.push(creditNum);
-  } else if (currentYear === "Third Year") {
-    creditArr3rd.push(creditNum);
-  } else if (currentYear === "Fourth Year") {
-    creditArr4th.push(creditNum);
   }
   // creditArr2.push(creditNum);
   //display credits in credit tdele
@@ -409,72 +453,7 @@ function getGrade(selectElements, gradeArr, creditArr, totalCreditEl, gpaEl) {
   console.log("2nd credit" + creditArr2nd);
   console.log("1st grade" + gradeArr1st);
   console.log("2nd grade" + gradeArr2nd);
-  console.log("gpaArr" + gpaArr);
-
-  gpaArr = [];
-  let firstYearGpa = calculateGpa(creditArr1st, gradeArr1st);
-  let secondYearGpa = calculateGpa(creditArr2nd, gradeArr2nd);
-  let thirdYearGpa = calculateGpa(creditArr3rd, gradeArr3rd);
-  let fourthYearGpa = calculateGpa(creditArr4th, gradeArr4th);
-  gpaArr.push(firstYearGpa);
-  gpaArr.push(secondYearGpa);
-  gpaArr.push(thirdYearGpa);
-  gpaArr.push(fourthYearGpa);
-  console.log(gpaArr);
-  // let g = gpaArr.filter((value) => {
-  //   !isNaN(value);
-  // });
-  // console.log(g);
-  console.log();
-  calculateCgpa(gpaArr);
-
   displayResult(creditArr, gradeArr, totalCreditEl, gpaEl);
-}
-function calculateGpa(creditArr, gradeArr) {
-  //calculate gpa
-
-  // muliplying creditArr and gradeArr and storing into sgpa
-  // sgpa = gpa(grade) * credit
-
-  let sgpa = creditArr.map((value, index) => value * gradeArr[index]);
-  // sgpa = gpa(grade) * credit
-  // gpa = total sgpa / total credit
-  let totalSgpa = sgpa.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0
-  );
-  let totalCredit = creditArr.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0
-  );
-  // gpa = Total SGPA / Total Credit
-  let gpa = totalSgpa / totalCredit;
-
-  return gpa;
-}
-function calculateCgpa(gpaArr) {
-  for (let i = gpaArr.length - 1; i >= 0; i--) {
-    if (isNaN(gpaArr[i])) {
-      gpaArr.splice(i, 1);
-    }
-  }
-  console.log(gpaArr);
-
-  let totalGpa = gpaArr.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0
-  );
-  let cgpa = totalGpa / gpaArr.length;
-
-  const cgpaEl1 = document.querySelector(".cgpa-1");
-  const cgpaEl2 = document.querySelector(".cgpa-2");
-  if (gpaArr.length === 1) {
-    cgpaEl1.textContent = cgpa.toFixed(2);
-  }
-  if (gpaArr.length === 2) {
-    cgpaEl2.textContent = cgpa.toFixed(2);
-  }
-  console.log(cgpa);
 }
 // ================================
 // ========functions========
