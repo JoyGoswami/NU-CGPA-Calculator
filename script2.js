@@ -115,6 +115,7 @@ let gradeArr4th = [];
 let gpaArr = [];
 //
 let gradeObj = {};
+let trackSection = 0;
 
 // Courses
 const subjectOptions = ["Select Course", "English", "Bangla"];
@@ -133,6 +134,7 @@ populateOptions(courseNameSeleceElement, subjectOptions, "Select Course");
 const infoForm = document.getElementById("info-form");
 infoForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  trackSection += 1;
 
   // Get course name and year values
   const courseName = document.getElementById("course_name").value;
@@ -169,7 +171,8 @@ infoForm.addEventListener("submit", (e) => {
   });
   // remove nu-calculate-home
   document.querySelector(".nu-calculate-home").style.display = "none";
-  document.querySelector(".nu-display-gpa-1").style.display = "block";
+  document.querySelector(".nu-display-gpa-0").style.display = "block";
+  // document.querySelector(".nu-display-gpa-0").classList.add("0");
 
   //display another year options based on selected year. disable the selected year
   const selectAnotherEl = document.getElementById("another-year");
@@ -227,9 +230,15 @@ tableForm.addEventListener("submit", function (e) {
 // ================================
 const selectAnotherEl = document.getElementById("another-year");
 selectAnotherEl.addEventListener("change", function () {
+  trackSection += 1;
+  console.log(trackSection);
   const courseName = document.getElementById("course_name").value;
   const courseYear = selectAnotherEl.value;
-  document.querySelector(".nu-display-gpa-2").style.display = "block";
+  // document.querySelector(".nu-display-gpa-1").classList.add("1");
+
+  // console.log(document.querySelectorAll(".nu-display-gpa").classList);
+
+  document.querySelector(".nu-display-gpa-1").style.display = "block";
 
   //display year
   let currentYear = courseData[courseName][courseYear].year;
@@ -302,6 +311,52 @@ tableForm2.addEventListener("submit", function (e) {
 });
 // ================================
 // ========page 3 form 2 submit========
+// ================================
+// ================================
+// ========page 3 form 3 submit========
+// ================================
+const tableForm3 = document.getElementById("table-form-3");
+tableForm3.addEventListener("submit", function (e) {
+  e.preventDefault();
+  document.querySelector(".result-3").style.display = "block";
+
+  // const selectElements = document.querySelectorAll(".select2");
+  //getting the year name
+  const get_year_name = document.getElementById("table-form-3");
+  const get_year_attr = get_year_name.getAttribute("name");
+  let split = get_year_attr.split(" ");
+  let year = split[0];
+  console.log(year);
+
+  const selectElements = document.querySelectorAll(`.${year}`);
+
+  // gradeArr2 = [];
+  if (year === "First") {
+    gradeArr1st = [];
+  } else if (year === "Second") {
+    gradeArr2nd = [];
+  } else if (year === "Third") {
+    gradeArr3rd = [];
+  } else if (year === "Fourth") {
+    gradeArr4th = [];
+  }
+  // gradeArr1st = [];
+  // gradeArr2nd = [];
+  const totalCreditEl = document.querySelector(".total-credit-3");
+  const gpaEl = document.querySelector(".gpa-3");
+
+  if (year === "First") {
+    getGrade(selectElements, gradeArr1st, creditArr1st, totalCreditEl, gpaEl);
+  } else if (year === "Second") {
+    getGrade(selectElements, gradeArr2nd, creditArr2nd, totalCreditEl, gpaEl);
+  } else if (year === "Third") {
+    getGrade(selectElements, gradeArr3rd, creditArr3rd, totalCreditEl, gpaEl);
+  } else if (year === "Fourth") {
+    getGrade(selectElements, gradeArr4th, creditArr4th, totalCreditEl, gpaEl);
+  }
+});
+// ================================
+// ========page 3 form 3 submit========
 // ================================
 
 // ================================
