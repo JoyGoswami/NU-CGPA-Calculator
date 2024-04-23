@@ -129,6 +129,19 @@ populateOptions(courseNameSeleceElement, subjectOptions, "Select Course");
 // ================================
 
 // ================================
+// ==From Home page to second page=
+// ================================
+const nuGpaBtn = document.getElementById("nu-gpa-btn");
+
+nuGpaBtn.addEventListener("click", () => {
+  document.querySelector(".home-main").style.display = "none";
+  document.querySelector(".nu-calculate-home").style.display = "block";
+});
+// ================================
+// ==From Home page to second page=
+// ================================
+
+// ================================
 // ========page 2form submit========
 // ================================
 const infoForm = document.getElementById("info-form");

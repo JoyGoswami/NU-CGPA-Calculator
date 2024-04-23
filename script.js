@@ -1,10 +1,10 @@
 // from page one to page two
-// const nuGpaBtn = document.getElementById("nu-gpa-btn");
+const nuGpaBtn = document.getElementById("nu-gpa-btn");
 
-// nuGpaBtn.addEventListener("click", () => {
-//   document.querySelector(".home-main").style.display = "none";
-//   document.querySelector(".nu-calculate-home").style.display = "block";
-// });
+nuGpaBtn.addEventListener("click", () => {
+  document.querySelector(".home-main").style.display = "none";
+  document.querySelector(".nu-calculate-home").style.display = "block";
+});
 
 const courseData = {
   English: [
