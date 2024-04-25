@@ -83,6 +83,64 @@ const courseData = {
       "Viva-voce": "4",
     },
   ],
+  Bangla: [
+    {
+      year: "First Year",
+      subjects: [
+        "History and Culture of Bangladesh and Bengalees (From Ancients to 2000 AD)",
+        "History of Bangla Language and Functional Bangla",
+        "Bangla Poetry-1",
+        "Bangla Novel-1",
+        "Introducing Sociology or Introduction to Social Work or Introduction to Political Theory : Fiction and Non- Fiction",
+        "History of the Emergence of Independent Bangladesh",
+      ],
+      "History and Culture of Bangladesh and Bengalees (From Ancients to 2000 AD)":
+        "4",
+      "History of Bangla Language and Functional Bangla": "4",
+      "Bangla Poetry-1": "4",
+      "Bangla Novel-1": "4",
+      "Introducing Sociology or Introduction to Social Work or Introduction to Political Theory : Fiction and Non- Fiction":
+        "4",
+      "History of the Emergence of Independent Bangladesh": "4",
+    },
+    {
+      year: "Second Year",
+      subjects: [
+        "History of Bengali Literature -1 (Ancients and Medieval)",
+        "Poetry of Medieval Age",
+        "Bengali Poetry -2",
+        "Bengali Drama -1",
+        "Sociology of Bangladesh  Or  Bangladesh Society and Culture",
+        "History of the Emergence of Independent Bangladesh",
+        "English (Compulsory)",
+      ],
+      "History of Bengali Literature -1 (Ancients and Medieval)": "4",
+      "Poetry of Medieval Age": "4",
+      "Bengali Poetry -2": "4",
+      "Bengali Drama -1": "4",
+      "Sociology of Bangladesh  Or  Bangladesh Society and Culture": "4",
+      "History of the Emergence of Independent Bangladesh": "4",
+      "English (Compulsory)": "Non-credit",
+    },
+    {
+      year: "Third Year",
+      subjects: [
+        "History of Bengali Literature -1 (Ancients and Medieval)",
+        "Poetry of Medieval Age",
+        "Bengali Poetry -2",
+        "Bengali Drama -1",
+        "Sociology of Bangladesh  Or  Bangladesh Society and Culture",
+        "History of the Emergence of Independent Bangladesh",
+      ],
+      "History of Bengali Literature -1 (Ancients and Medieval)": "4",
+      "Poetry of Medieval Age": "4",
+      "Bengali Poetry -2": "4",
+      "Bengali Drama -1": "4",
+      "Sociology of Bangladesh  Or  Bangladesh Society and Culture": "4",
+      "Political Organisation and The Political System of UK and USA": "4",
+      "History of the Emergence of Independent Bangladesh": "4",
+    },
+  ],
 };
 
 const grades = [
@@ -491,7 +549,11 @@ function createElements(
   const tdCredit = document.createElement("td");
 
   // storing credits to an array depending on year
-  let creditNum = Number(courseData[courseName][courseYear][subject]);
+  let creditStr = courseData[courseName][courseYear][subject];
+  if (creditStr === "Non-credit") {
+    creditStr = 0;
+  }
+  let creditNum = Number(creditStr);
   if (currentYear === "First Year") {
     creditArr1st.push(creditNum);
   } else if (currentYear === "Second Year") {
@@ -534,7 +596,9 @@ function getGrade(selectElements, gradeArr, creditArr, totalCreditEl, gpaEl) {
   console.log("2nd credit" + creditArr2nd);
   console.log("1st grade" + gradeArr1st);
   console.log("2nd grade" + gradeArr2nd);
-  console.log("gpaArr" + gpaArr);
+  console.log("1st grade" + gradeArr3rd);
+  console.log("2nd grade" + gradeArr3rd);
+  console.log(gradeArr);
 
   gpaArr = [];
   let firstYearGpa = calculateGpa(creditArr1st, gradeArr1st);
